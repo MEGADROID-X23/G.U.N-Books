@@ -105,8 +105,8 @@ p{
 ------------------------------*/
 .php-email-form .error-message {
   display: none;
-  background: #059652;
-  color: #ffffff;
+  background: transparent;
+  color: transparent;
   text-align: left;
   padding: 15px;
   margin-bottom: 24px;
@@ -115,8 +115,8 @@ p{
 
 .php-email-form .sent-message {
   display: none;
-  color: #ffffff;
-  background: #059652;
+  color: transparent;
+  background: transparent;
   text-align: center;
   padding: 15px;
   margin-bottom: 24px;
