@@ -323,11 +323,6 @@
                   <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
                 </div>
 
-                <div class="col-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
                   <button type="submit">Send Message</button>
                 </div>
 
@@ -430,6 +425,26 @@
         // Toggle the image source
         imgElement.src = (imgElement.src.includes(originalImage)) ? newImage : originalImage;
     }
+</script>
+
+<script>
+  // Select the form element
+const form = document.querySelector('.php-email-form');
+
+// Add an event listener for form submission
+form.addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent the default form submission
+
+  // Show a confirmation prompt
+  alert('Your feedback has been sent');
+
+  // Clear all input fields and the textarea
+  form.reset();
+
+  // Optionally, you can allow the form to proceed with submission if needed:
+  // form.submit();
+});
+
 </script>
 
 </div>
