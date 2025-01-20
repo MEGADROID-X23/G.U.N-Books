@@ -189,12 +189,7 @@
           <div class="col-lg-5 position-relative" data-aos="fade-up" data-aos-delay="200" class="about-col-1" id="slider-wrapper">
             <!-- Image container for sliding images -->
              <div id="image-container">
-                <img src="image1.jpg" class="img-fluid" alt="Image 1" >
-                <!-- <img src="image2.jpg" class="img-fluid" alt="Image 2"> -->
-                <!-- <img src="image3.jpg" class="img-fluid" alt="Image 3">
-                <img src="image4.jpg" class="img-fluid" alt="Image 4">
-                <img src="image5.jpg" class="img-fluid" alt="Image 5">
-                <img src="image6.jpg" class="img-fluid" alt="Image 6"> -->
+                <img id="cycle-image" src="image1.jpg" class="img-fluid" alt="Image 1" onclick="cycleImage()">
               </div>
           </div>
 
@@ -436,6 +431,32 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
   <!-- <script src="assets/js/slide.js"></script> -->
+
+  <script>
+    // JavaScript function to cycle through 6 images on click
+    function cycleImage() {
+        const imgElement = document.getElementById('cycle-image');
+
+        // Array of image paths
+        const images = [
+            'image1.jpg',
+            'image2.jpg',
+            'image3.jpg',
+            'image4.jpg',
+            'image5.jpg',
+            'image6.jpg'
+        ];
+
+        // Get the current image index
+        const currentImageIndex = images.findIndex(image => imgElement.src.includes(image));
+
+        // Calculate the next image index (cycle back to 0 if at the end of the array)
+        const nextImageIndex = (currentImageIndex + 1) % images.length;
+
+        // Update the image source to the next image
+        imgElement.src = images[nextImageIndex];
+    }
+</script>
 
   <script>
     // JavaScript function to toggle between two images
